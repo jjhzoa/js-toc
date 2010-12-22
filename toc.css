@@ -1,0 +1,20 @@
+div#toc ul {
+    list-style: none;
+    float: right;
+    margin: 10px 0px 10px 10px;
+    padding: 0px 10px 0px 0px;
+    background-color: #aaa;
+
+    box-shadow: 4px 4px 4px 1px black;
+
+
+}
+div#toc ul li ul {
+    margin-bottom: 0.75em;
+    color: #3b5998;
+}
+div#toc ul li ul li ul {
+    margin-bottom: 0.25em;
+}
+
+
