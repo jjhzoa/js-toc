@@ -3,11 +3,8 @@ div#toc ul {
     float: right;
     margin: 10px 0px 10px 10px;
     padding: 0px 10px 0px 0px;
-    background-color: #aaa;
-
+    background-color: #eee;
     box-shadow: 4px 4px 4px 1px black;
-
-
 }
 div#toc ul li ul {
     margin-bottom: 0.75em;
@@ -16,5 +13,3 @@ div#toc ul li ul {
 div#toc ul li ul li ul {
     margin-bottom: 0.25em;
 }
-
-
