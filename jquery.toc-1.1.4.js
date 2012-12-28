@@ -32,7 +32,7 @@
         for (var i = 1; i <= 6; i++) {
             indexes['h' + i] = (opts.exclude.match(new RegExp('h' + i, 'i')) === null && $('h' + i).length > 0) ? ++index : 0;
         }
-
+//alert(opts['top']);
         return this.each(function() {
     	    $(opts.context + ' :header').not(opts.exclude).each(function() {
                 var $this = $(this);
@@ -43,10 +43,16 @@
                             updateNumeration(headers, 'h' + i);
                             if (opts.autoId && !$this.attr('id')) {
                                 $this.attr('id', generateId($this.text()));
+                                $this.attr('class', 'anchor');
+                                //$this.prependTo('<a href="top">top</a>');
+                                //$this.append('flaf');
+                                //$this.after('<a href="#content_top">Top<a>');
                             }
-                            $this.text(addNumeration(headers, 'h' + i, $this.text()));
+                            
+                            $this.text(addNumeration(headers, 'h' + i, $this.text() ));
+                            
                         }
-                        appendToTOC(toc, indexes['h' + i], $this.attr('id'), $this.text());
+                        appendToTOC(toc, indexes['h' + i], $this.attr('id'), $this.text() );
                     }
                 }
             });
@@ -61,7 +67,7 @@
         if (header === 0 && toc.find(':last').length !== 0 && !toc.find(':last').is('ul')) {
 	        toc.find('li:last').append('<ul></ul>');
 	    }
-    };
+    }
 
     /*
      * Updates headers numeration.
@@ -81,7 +87,7 @@
      */
     function generateId(text) {
         return text.replace(/[ <>#\/\\?&\n]/g, '_');
-    };
+    }
 
     /*
      * Prepends the numeration to a heading.
@@ -96,7 +102,7 @@
         });
 
         return numeration + ' ' + text;
-    };
+    }
 
     /*
      * Appends a new node to the TOC.
@@ -116,7 +122,7 @@
         } else {
             parent.append('<li><a href="#' + id + '">' + text + '</a></li>');
         }
-    };
+    }
 
     $.fn.toc.defaults = {
         exclude: 'h1, h5, h6',

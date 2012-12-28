@@ -15,10 +15,9 @@ function jstoc_set_toc ($options = array ()) {
     }
     $str = <<<EOF
 $(document).ready(function() {
-    $('#toc').toc({exclude: '{$options['exclude']}' , context: '{$options['context']}', autoId: true});
+    $('#toc').toc({exclude: '{$options['exclude']}' , context: '{$options['context']}', autoId: true, 'top': 'flaf'});
 });
 EOF;
-
 
     template::setStringJs($str);
 }
