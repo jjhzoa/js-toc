@@ -1,5 +1,7 @@
 ### About
 
+Deprecated. Built-in
+
 Simple js plugin for making it easy to add TOC headings to your markup 
 for more complex articles or blog entries. 
 
